@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>FLEX</title>
+ <style>
+
+.container {
+  display: flex;
+  background-color: gray;
+  gap: 10px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  margin-bottom: 10px;
+}
+
+.square:last-child {
+  margin-bottom: 0;
+}
+
+ </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column">
+          <div class="square"></div>
+          <div class="square"></div>
+        </div>
+        <div class="square"></div>
+      </div>      
+</body>
+</html>

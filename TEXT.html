@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text</title>
+    <style>
+        ul {
+            list-style-position: inside;
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            padding: 0;
+        }
+
+        li {
+            width: 300px;
+            line-height: 1.5rem;
+            text-align: justify;
+        }
+
+        li:nth-child(2) {
+            text-align: center;
+        }
+
+        li::before {
+            content: "• ";
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Перед началом работы проверьте наличие оборудования, входящего в комплект 3BM.</li>
+        <li>При отсутствии одного или нескольких периферийных устройств следует сразу же обратиться к техническому персоналу ВЦ.</li>
+        <li>После осмотра визуальными методами своего рабочего места можно осторожно включить питание 3BM.</li>
+    </ul>
+</body>
+</html>
