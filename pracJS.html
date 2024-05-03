@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="fruits-result"></div>
+    <div id="unique-fruits-result"></div>
+    <div id="students-result"></div>
+    <div id="pairs-result"></div>
+
+    <script>
+        const fruits = ['apple', 'apple', 'kiwi', 'banana', 'kiwi', 'apple'];
+    
+        const count = {};
+        fruits.forEach(fruit => {
+        count[fruit] = (count[fruit] || 0) + 1;
+        });
+    
+        const uniqueFruits = [];
+    
+        new Set(fruits).forEach(fruit => uniqueFruits.push(fruit));
+    
+        document.getElementById('fruits-result').innerHTML = 'Счетчик фруктов: ' + JSON.stringify(count);
+        document.getElementById('unique-fruits-result').innerHTML = 'Уникальные фрукты: ' + uniqueFruits.join(', ');
+    
+        const students = [
+        { name: 'alex', age: 25 },
+        { name: 'mike', age: 24 },
+        { name: 'masha', age: 29 },
+        { name: 'will', age: 11 },
+        ];
+    
+        function groupStudentsByAge(students) {
+        const groupedStudents = {};
+    
+        students.forEach(student => {
+            const age = student.age;
+            if (!groupedStudents[age]) {
+                groupedStudents[age] = [];
+            }
+            groupedStudents[age].push(student);
+        });
+    
+        return groupedStudents;
+        }
+    
+        const groupedByAge = groupStudentsByAge(students);
+        document.getElementById('students-result').innerHTML = 'Студенты, группированные по возрасту: ' + JSON.stringify(groupedByAge);
+    
+        function findSumPair(numbers, targetSum) {
+        const result = [];
+    
+        for (let i = 0; i < numbers.length; i++) {
+            for (let j = i + 1; j < numbers.length; j++) {
+                if (numbers[i] + numbers[j] === targetSum) {
+                    result.push([numbers[i], numbers[j]]);
+                }
+            }
+        }
+    
+        return result;
+        }
+    
+        // Пример использования функции:
+        const numbers = [2, 4, 6, 8, 10];
+        const targetSum = 12;
+        const pairs = findSumPair(numbers, targetSum);
+        document.getElementById('pairs-result').innerHTML = 'Пары чисел, сумма которых равна ' + targetSum + ': ' + JSON.stringify(pairs);
+    </script>
+    
+</body>
+</html>
